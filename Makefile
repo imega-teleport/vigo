@@ -1,7 +1,10 @@
-# Build rootfs for composer
+# Build rootfs for vigo
 
 build: build-fs
-	@docker build -t imega/vigo .
+	@docker build -t imegateleport/vigo .
+
+push:
+	@docker push imegateleport/vigo:latest
 
 build-fs:
 	@docker run --rm \
