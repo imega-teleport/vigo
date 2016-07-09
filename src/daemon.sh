@@ -7,7 +7,7 @@ do
     UUID=`echo $(basename "$DEST")`
     mkdir -p /tmp/$UUID
     unzip $DEST$FILE -d /tmp/$UUID
-    rsync --inplace -av /tmp/$UUID rsync://fileman:873/unzip
+    rsync --inplace -av /tmp/$UUID rsync://fileman:873/parse
     rm -rf /tmp/$UUID
     rm -rf ${DEST%?}
 done
