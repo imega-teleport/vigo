@@ -6,7 +6,7 @@ inotifywait -mr -e close_write --fromfile /app/wait-list.txt | while read DEST E
 do
     UUID=`echo $(basename "$DEST")`
     mkdir -p /tmp/$UUID
-    unzip $DEST$FILE -d /tmp/$UUID
+    unzip $DEST$FILE -d /tmp/$UUID && \
     rsync --inplace -av /tmp/$UUID rsync://fileman:873/parse && \
     rm -rf /tmp/$UUID ${DEST%?}
 done
