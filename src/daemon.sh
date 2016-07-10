@@ -7,6 +7,6 @@ do
     UUID=`echo $(basename "$DEST")`
     mkdir -p /tmp/$UUID
     unzip $DEST$FILE -d /tmp/$UUID && \
-    rsync --inplace -av --debug=ALL /tmp/$UUID rsync://fileman:873/parse && \
+    rsync --inplace -av /tmp/$UUID rsync://fileman:873/parse && \
     rm -rf /tmp/$UUID ${DEST%?}
 done
